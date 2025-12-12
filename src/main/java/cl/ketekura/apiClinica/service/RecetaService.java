@@ -58,7 +58,21 @@ public class RecetaService {
     }
     recetaRepository.deleteById(idReceta);
     return true;
-}
+    }
+
+    public RecetaMedica actualizarReceta(String id, RecetaMedica datosActualizados) {
+
+        RecetaMedica receta = recetaRepository.findById(id).orElse(null);
+        if (receta == null) {
+            return null;
+        }
+    
+        receta.setFechaReceta(datosActualizados.getFechaReceta());
+        receta.setDiagnostico(datosActualizados.getDiagnostico());
+        receta.setMedicamentos(datosActualizados.getMedicamentos());
+    
+        return recetaRepository.save(receta);
+    }
 
 }
 
