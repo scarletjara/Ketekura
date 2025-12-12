@@ -40,6 +40,9 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// --- Dotenv ---
+	implementation 'io.github.cdimascio:dotenv-java:3.1.0'
+
 }
 
 
