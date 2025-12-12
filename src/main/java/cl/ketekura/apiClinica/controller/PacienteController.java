@@ -31,7 +31,7 @@ public class PacienteController {
     }
 
     @GetMapping("/{rut}")
-    public Paciente obtenerPorRut(@PathVariable Long pacRut) {
+    public Paciente obtenerPorRut(@PathVariable("rut") Long pacRut) {
         return service.getByRut(pacRut);
     }
 }
