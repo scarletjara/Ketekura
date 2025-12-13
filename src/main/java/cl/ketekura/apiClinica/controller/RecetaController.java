@@ -46,7 +46,7 @@ public class RecetaController {
     }
 
     @DeleteMapping("/{id}")
-public ResponseEntity<String> eliminarReceta(@PathVariable("id") String id) {
+    public ResponseEntity<String> eliminarReceta(@PathVariable("id") String id) {
     boolean eliminado = recetaService.eliminarReceta(id);
 
     if (!eliminado) {

@@ -25,4 +25,7 @@ public class PacienteService {
     public Paciente getByRut(Long pacRut) {
         return PacienteRepository.findById(pacRut).orElse(null);
     }
+    public long contarPacientes() {
+        return PacienteRepository.count();
+    }
 }

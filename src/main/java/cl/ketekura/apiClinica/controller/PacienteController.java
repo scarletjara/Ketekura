@@ -1,7 +1,7 @@
 package cl.ketekura.apiClinica.controller;
 
 import java.util.List;
-
+import java.util.Map; 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,4 +34,11 @@ public class PacienteController {
     public Paciente obtenerPorRut(@PathVariable("rut") Long pacRut) {
         return service.getByRut(pacRut);
     }
+
+    @GetMapping("/total")
+    public Map<String, Long> getTotalPacientes() {
+        long total = service.contarPacientes();
+        return Map.of("total", total);
+    }
+    
 }
